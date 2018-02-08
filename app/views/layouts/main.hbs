@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Mongo News Scraper</title>
+    <script src="https://use.fontawesome.com/16f4d57684.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.19.2/moment.min.js"></script>
+    {{!-- <script src="http://cdn.mxpnl.com/libs/mixpanel-2.0.min.js"></script> --}}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.0/css/bulma.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
+</head>
+
+<body>
+
+    <section class="hero is-dark">
+        <div class="hero-body">
+            <div class="container">
+                <h1 class="title">
+                    Mongo News Scraper
+                </h1>
+                <h2 class="subtitle">
+                    A MongoDB news scraper
+                    <span class="is-size-7 has-text-grey">by
+                        <a href="http://www.github.com/benfieldta" target="_blank">GitHub{benfieldta}</a>
+                    </span>
+                </h2>
+                <h2 class="subtitle">
+                    Powered by: [Hacker News]
+                </h2>
+            </div>
+        </div>
+    </section>
+
+    <nav class="navbar is-dark">
+        <div class="container">
+            <div class="field is-grouped">
+                <p class="control">
+                    <form action="/" method="POST">
+                        <button id="scrape-button" class="button is-success">
+                            <span class="icon">
+                                <i class="fa fa-refresh"></i>
+                            </span>
+                            <span>
+                                Get Articles
+                            </span>
+
+                        </button>
+                    </form>
+                </p>
+                <p class="control">
+                    <form action="/delete" method="POST">
+                        <button id="delete-articles" class="button is-danger">
+                            <span class="icon">
+                                <i class="fa fa-trash"></i>
+                            </span>
+                            <span>
+                                Delete Articles
+                            </span>
+                        </button>
+                    </form>
+                </p>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+
+        {{{ body }}}
+
+    </div>
+
+</body>
+
+<script type="text/javascript" src="assets/js/app.js"></script>
+
+</html>

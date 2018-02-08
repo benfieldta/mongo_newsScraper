@@ -1,0 +1,35 @@
+{{#if data}}
+<table class="table">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Title</th>
+            <th>Retrieval Date</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each data}}
+        <tr>
+            <td>
+                {{ inc @index }}.
+            </td>
+            <td>
+                <a href="{{ this.link }}" target="_blank">
+                    {{ this.title }}
+                </a>
+            </td>
+            <td>
+                {{ this.dateScraped }}
+            </td>
+            <td>
+                <i data-id="{{ this._id }}" class="fa fa-pencil fa-fw edit-article"></i>
+                <i data-id="{{ this._id }}" class="fa fa-trash fa-fw delete-article"></i>
+            </td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>
+{{else}}
+<h5 class="title is-5">There are no articles yet. Why don't you fetch some?</h1>
+    {{/if}}
